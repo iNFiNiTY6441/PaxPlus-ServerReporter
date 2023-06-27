@@ -1,0 +1,23 @@
+{
+    "name": "paxplus-serverreporter",
+    "version": "1.0.0",
+    "description": "Hawken PAX Server publishing client",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iNFiNiTY6441/PaxPlus-ServerReporter.git"
+    },
+    "author": "iNFiNiTY6441",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/iNFiNiTY6441/PaxPlus-ServerReporter/issues"
+    },
+    "homepage": "https://github.com/iNFiNiTY6441/PaxPlus-ServerReporter#readme",
+    "dependencies": {
+        "dgram": "^1.0.1",
+        "node-fetch": "^3.3.1"
+    }
+}
