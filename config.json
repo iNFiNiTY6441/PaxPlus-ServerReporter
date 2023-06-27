@@ -1,4 +1,5 @@
 {
-    "masterserverURL":"",
+    "masterserverURL":"127.0.0.1:3000",
+    "updateRate": 1000,
     "expireTicks": 4
 }

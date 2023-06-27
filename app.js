@@ -9,6 +9,7 @@ const g_Config  = JSON.parse( fs.readFileSync( "./config.json","utf8" ) );
 var g_Settings = {
 
     masterserverURL: process.env.masterserverURL || g_Config.masterserverURL,
+    updateRate: process.env.updateRate || g_Config.updateRate || 1000,
     expireTicks: process.env.expireTicks || g_Config.expireTicks || 4
 }
 
@@ -168,8 +169,8 @@ function sendMasterserverMessages() {
     if ( g_MasterserverMessages.length == 0 ) return;
 
     // Send messages
-    let post = fetch("http://127.0.0.1:3000/serverListings", {
-        method: "POST",
+    let post = fetch( g_Settings.masterserverURL+"/serverListings", {
+        method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
@@ -180,7 +181,7 @@ function sendMasterserverMessages() {
         // Clear internal serverlistings so all of them are resent to the server on next attempt
 
         g_Servers = {};
-        console.log("POST serverListings FAILED!\r\n"+err.message)
+        console.log("PUT serverListings FAILED!\r\n"+err.message)
     });
     // Everything sent, clear backlog
     g_MasterserverMessages = [];
@@ -237,7 +238,7 @@ socket.on('listening', function () {
     
 	socket.setBroadcast(true);
 
-    setInterval( updateTick, 1000);
+    setInterval( updateTick, g_Settings.updateRate );
 
 });
 
