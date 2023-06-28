@@ -1,5 +1,5 @@
 {
-    "masterserverURL":"127.0.0.1:3000",
+    "masterserverURL":"<insert masterserver>",
     "updateRate": 1000,
     "expireTicks": 4
 }
