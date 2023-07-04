@@ -1,5 +1,14 @@
 {
-    "masterserverURL":"<insert masterserver>",
-    "updateRate": 1000,
-    "expireTicks": 4
+    "Local": {
+
+        "TickInterval": 1000,
+        "ExpireTicks": 5
+    },
+
+    "Remote": {
+
+        "MasterServerURL": "<MASTERSERVER_URL_HERE>",
+        "ServiceMessage": "",
+        "HeartbeatInterval": 300000
+    }
 }
