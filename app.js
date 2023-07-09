@@ -38,7 +38,7 @@ function Tick () {
 }
 
 function cleanUp() {
-    
+
     if (process.exitTimeoutId) return;
     svManager.Shutdown();
     process.exitTimeoutId = setTimeout(() => { process.exit() }, 2000);
@@ -61,4 +61,5 @@ socket.on('message', function (message, remote) {
 process.on('SIGTERM', cleanUp );
 process.on('SIGINT', cleanUp );
 
-socket.bind('14001', getIPAddress() );
+let broadcastAddr = process.platform === "win32" ? getIPAddress() : "0.0.0.0";
+socket.bind('14001', broadcastAddr );
