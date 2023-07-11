@@ -33,7 +33,7 @@ class ServerManager {
     async updateConfigFromMasterserver() {
 
 
-        let newConfig = await fetch( this.Settings.Remote.MasterServerURL+"/config", {
+        let newConfig = await fetch( this.Settings.Local.MasterServerURL+"/config", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -98,7 +98,7 @@ class ServerManager {
 
         // Send messages
         console.log(this.Settings)
-        let request = fetch( this.Settings.Remote.MasterServerURL+"/serverListings", {
+        let request = fetch( this.Settings.Local.MasterServerURL+"/serverListings", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

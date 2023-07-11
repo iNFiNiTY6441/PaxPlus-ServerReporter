@@ -2,12 +2,12 @@
     "Local": {
 
         "TickInterval": 1000,
-        "ExpireTicks": 5
+        "ExpireTicks": 5,
+        "MasterServerURL": "http://127.0.0.1:3000"
     },
 
     "Remote": {
 
-        "MasterServerURL": "http://127.0.0.1:3000",
         "ServiceMessage": "",
         "HeartbeatInterval": 300000
     }
