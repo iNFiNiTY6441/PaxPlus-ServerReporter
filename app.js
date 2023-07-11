@@ -1,5 +1,5 @@
 const dgram     = require('dgram');
-const socket    = dgram.createSocket('udp4');
+const socket    = dgram.createSocket('udp4',{reuseAddr:true});
 
 let ServerManager = require("./serverManager.js");
 var QueryInterval = null;
